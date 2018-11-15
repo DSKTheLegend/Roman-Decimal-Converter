@@ -74,7 +74,11 @@ def decimal():
 #Decimal to Roman
 def roman():
     number = input("Enter the Decimal Number : ")
-    number = int(number)
+    try:
+        number = int(number)
+    except:
+        print("Um, There's some problem i think. \nWe only accept Integers.")
+        exit()
     digits = list()
     while number > 0:
         if number >= 1000:
@@ -123,11 +127,9 @@ def roman():
             digits.append('I')
             number = number - 1
         else:
-            print("Umm, I guess there's some error.")
+            print("Umm, I guess there's some error.") # This should be never triggered unless something fishy is inserted
         
     print("".join(digits))
 
-    
-
+# Roll It Out!
 __init__()
-
